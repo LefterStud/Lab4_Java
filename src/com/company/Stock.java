@@ -11,19 +11,19 @@ public class Stock {
     private String manufacturer;
     public static float Max = 0;
 
-    public void setAmount(float amount) {
-        this.amount = (int) (amount * 1000);
+    public void setAmount() {
+        this.amount = (int) ((float) Math.random() * 1000);
     }
 
-    public void setPrice(float price) {
-        this.price = (float) ((int) (price * 100000)) / 100;
+    public void setPrice() {
+        this.price = (float) ((int) ((float) Math.random() * 100000)) / 100;
         if (this.price > Max) {
             Max = this.price;
         }
     }
 
-    public void setYear(float year) {
-        this.year = (int) ((year * 22) + 2000);
+    public void setYear() {
+        this.year = (int) (((float) Math.random() * 22) + 2000);
     }
 
     public void setManufacturer(String manufacturer) {
