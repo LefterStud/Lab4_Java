@@ -1,10 +1,8 @@
 package com.company;
 
 
-import static com.company.Stock.Max;
-
 /**
- * Lefter Olexii, 18
+ * Lefter Olexiy, 18
  */
 public class Main {
     /**
@@ -12,107 +10,59 @@ public class Main {
      * (Количество, цена, год изготовления, производитель)
      */
     public static void task1() {
-        System.out.println("\nОпределить самый дорогой товар на складе и напечатать все сведения о нем.\n" +
-                "(Количество, цена, год изготовления, производитель)\n");
-        Stock product1 = new Stock();
-        Stock product2 = new Stock();
-        Stock product3 = new Stock();
-        Stock product4 = new Stock();
-        Stock product5 = new Stock();
-        Stock[] products = new Stock[]{product1, product2, product3, product4, product5};
+        System.out.println("""
 
-        product1.setAmount();
-        product1.setPrice();
-        product1.setYear();
-        product1.setManufacturer("Ukraine");
+                Определить самый дорогой товар на складе и напечатать все сведения о нем.
+                (Количество, цена, год изготовления, производитель)
+                """);
+        final Stock product1 = new Stock((int) (Math.random() * 1000), (float) (int) (Math.random() * 100000) / 100, ((int) (Math.random() * 22) + 2000), "Ukraine");
+        final Stock product2 = new Stock((int) (Math.random() * 1000), (float) (int) (Math.random() * 100000) / 100, ((int) (Math.random() * 22) + 2000), "China");
+        final Stock product3 = new Stock((int) (Math.random() * 1000), (float) (int) (Math.random() * 100000) / 100, ((int) (Math.random() * 22) + 2000), "Germany");
+        final Stock product4 = new Stock((int) (Math.random() * 1000), (float) (int) (Math.random() * 100000) / 100, ((int) (Math.random() * 22) + 2000), "USA");
+        final Stock product5 = new Stock((int) (Math.random() * 1000), (float) (int) (Math.random() * 100000) / 100, ((int) (Math.random() * 22) + 2000), "Japan");
 
-        product2.setAmount();
-        product2.setPrice();
-        product2.setYear();
-        product2.setManufacturer("China");
+        final Products products = new Products(5);
+        products.addProduct(product1);
+        products.addProduct(product2);
+        products.addProduct(product3);
+        products.addProduct(product4);
+        products.addProduct(product5);
 
-        product3.setAmount();
-        product3.setPrice();
-        product3.setYear();
-        product3.setManufacturer("Germany");
-
-        product4.setAmount();
-        product4.setPrice();
-        product4.setYear();
-        product4.setManufacturer("USA");
-
-        product5.setAmount();
-        product5.setPrice();
-        product5.setYear();
-        product5.setManufacturer("Japan");
-
-        for (int i = 0; i < products.length; i++) {
-            if (products[i].getPrice() == Max) {
-                System.out.println(products[i].Info());
-            }
-        }
+        System.out.println(products + "______________________");
+        System.out.println("The most expensive product:\n\n" + products.findMaxPriceProduct());
     }
-
 
     /**
      * Вывести сведения о футболистах, старших 20-ти лет и забивающих за игру не менее 0,4 мяча.
      * (Фамилия, дата рождения, амплуа, количество игр, количество забитых мячей, место рождения)
      */
     public static void task2() {
-        System.out.println("\nВывести сведения о футболистах, старших 20-ти лет и забивающих за игру не менее 0,4 мяча.\n" +
-                "(Фамилия, дата рождения, амплуа, количество игр, количество забитых мячей, место рождения)\n");
-        Footballer footballer1 = new Footballer();
-        Footballer footballer2 = new Footballer();
-        Footballer footballer3 = new Footballer();
-        Footballer footballer4 = new Footballer();
-        Footballer footballer5 = new Footballer();
-        Footballer[] footballers = new Footballer[]{footballer1, footballer2, footballer3, footballer4, footballer5};
+        System.out.println("""
+                
+                Вывести сведения о футболистах, старших 20-ти лет и забивающих за игру не менее 0,4 мяча.
+                (Фамилия, дата рождения, амплуа, количество игр, количество забитых мячей, место рождения)
+                """);
+        final Footballer footballer1 = new Footballer("Smith", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Goalkeeper", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Kannada");
+        final Footballer footballer2 = new Footballer("Jones", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Defender", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Italy");
+        final Footballer footballer3 = new Footballer("Taylor", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Midfielder", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Romania");
+        final Footballer footballer4 = new Footballer("Brown", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Attacking", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Turkey");
+        final Footballer footballer5 = new Footballer("Williams", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Sweeper", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Mongolia");
 
-        footballer1.setSurname("Smith");
-        footballer1.setBirthDate();
-        footballer1.setRole("Goalkeeper");
-        footballer1.setGamesNumber();
-        footballer1.setGoalsNumber();
-        footballer1.setBirthPlace("Kannada");
+        final Footballers footballers = new Footballers(5);
+        footballers.addFootballer(footballer1);
+        footballers.addFootballer(footballer2);
+        footballers.addFootballer(footballer3);
+        footballers.addFootballer(footballer4);
+        footballers.addFootballer(footballer5);
+        System.out.println(footballers + "______________________");
+        System.out.println("Footballers over 20 years of age and scoring at least 0.4 goals per game:\n\n");
+        footballers.findProfessionalFootballers();
 
-        footballer2.setSurname("Jones");
-        footballer2.setBirthDate();
-        footballer2.setRole("Defender");
-        footballer2.setGamesNumber();
-        footballer2.setGoalsNumber();
-        footballer2.setBirthPlace("Italy");
-
-        footballer3.setSurname("Taylor");
-        footballer3.setBirthDate();
-        footballer3.setRole("Midfielder");
-        footballer3.setGamesNumber();
-        footballer3.setGoalsNumber();
-        footballer3.setBirthPlace("Romania");
-
-        footballer4.setSurname("Brown");
-        footballer4.setBirthDate();
-        footballer4.setRole("Attacking");
-        footballer4.setGamesNumber();
-        footballer4.setGoalsNumber();
-        footballer4.setBirthPlace("Turkey");
-
-        footballer5.setSurname("Williams");
-        footballer5.setBirthDate();
-        footballer5.setRole("Sweeper");
-        footballer5.setGamesNumber();
-        footballer5.setGoalsNumber();
-        footballer5.setBirthPlace("Mongolia");
-
-        for (int i = 0; i < footballers.length; i++) {
-            if ((footballers[i].getAge() > 20) && ((float)footballers[i].getGoalsNumber() / footballers[i].getGamesNumber() > 0.4)) {
-                System.out.println(footballers[i].Info());
-            }
-        }
     }
-
     public static void main(String[] args) {
         task1();
         task2();
+
     }
 
 
