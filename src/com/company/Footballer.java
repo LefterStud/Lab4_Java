@@ -51,7 +51,7 @@ public class Footballer {
     public void setRole(String role) {
         this.role = role.strip();
         for (int i = 0; i < this.role.length(); i++) {
-            if (!Character.isAlphabetic(this.role.charAt(i))) {
+            if (!(Character.isAlphabetic(this.role.charAt(i))||(this.role.charAt(i)=='-'))) {
                 this.role = "Incorrect data";
             }
         }

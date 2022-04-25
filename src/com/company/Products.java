@@ -29,9 +29,9 @@ public class Products {
 
     public Stock findMaxPriceProduct() {
         Stock maxPriceProduct = products[0];
-        for (final Stock product : products) {
-            if (product.getPrice() >= maxPriceProduct.getPrice()) {
-                maxPriceProduct = product;
+        for (int i = 1; i < products.length; i++) {
+            if (products[i].getPrice() >= maxPriceProduct.getPrice()) {
+                maxPriceProduct = products[i];
             }
         }
         return maxPriceProduct;

@@ -44,7 +44,7 @@ public class Main {
                 """);
         final Footballer footballer1 = new Footballer("Smith", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Goalkeeper", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Kannada");
         final Footballer footballer2 = new Footballer("Jones", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Defender", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Italy");
-        final Footballer footballer3 = new Footballer("Taylor", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Midfielder", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Romania");
+        final Footballer footballer3 = new Footballer("Taylor", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Mid-fielder", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Romania");
         final Footballer footballer4 = new Footballer("Brown", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Attacking", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Turkey");
         final Footballer footballer5 = new Footballer("Williams", (int) (Math.random() * 15) + 1991, (int) (Math.random() * 12) + 1, (int) (Math.random() * 31) + 1, "Sweeper", (int) (Math.random() * 1000), (int) (Math.random() * 500), "Mongolia");
 
@@ -56,7 +56,7 @@ public class Main {
         footballers.addFootballer(footballer5);
         System.out.println(footballers + "______________________");
         System.out.println("Footballers over 20 years of age and scoring at least 0.4 goals per game:\n\n");
-        footballers.findProfessionalFootballers();
+        System.out.println(footballers.findProfessionalFootballers());
 
     }
     public static void main(String[] args) {

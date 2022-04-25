@@ -1,6 +1,10 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Footballers {
+    public static final int MIN_AGE = 20;
+    public static final double GOAL_COEFFICIENT = 0.4;
     private Footballer[] footballers;
     private int currentFootballersNumber;
 
@@ -27,19 +31,25 @@ public class Footballers {
         currentFootballersNumber--;
     }
 
-    public void findProfessionalFootballers(){
-        for (final Footballer footballer:footballers) {
-            if ((footballer.getAge() > 20) && ((float)footballer.getGoalsNumber() / footballer.getGamesNumber() > 0.4)) {
-                System.out.println(footballer+"\n");
+    public Footballers findProfessionalFootballers() {
+        Footballers temp = new Footballers(footballers.length);
+        for (final Footballer footballer : footballers) {
+            if ((footballer.getAge() > MIN_AGE) && ((float) footballer.getGoalsNumber() / footballer.getGamesNumber() > GOAL_COEFFICIENT)) {
+                temp.addFootballer(footballer);
             }
         }
+        temp.footballers = Arrays.copyOf(temp.footballers, temp.currentFootballersNumber + 1);
+        return temp;
     }
 
     @Override
     public String toString() {
         String result = "Footballer: " + System.lineSeparator();
         for (final Footballer footballer : footballers) {
-            result += footballer + System.lineSeparator();
+            if (footballer != null)
+            {
+                result += footballer + System.lineSeparator();
+            }
         }
         return result;
     }
